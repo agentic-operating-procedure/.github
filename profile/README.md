@@ -6,7 +6,7 @@ AOP establishes the intent, decision rights, execution constraints and assurance
 
 Its purpose is not merely to automate a documented procedure. It is to make delegated operational execution inspectable: to state, before execution, who may decide what, under which constraints, and with what proof of outcome.
 
-Read the founding paper in `aop-foundations` | Explore the GitHub organisation
+[Read the founding paper](https://github.com/agentic-operating-procedure/aop-foundations/blob/main/docs/aop-founding-paper-concept-scope.md) | [Explore the GitHub organisation](https://github.com/agentic-operating-procedure)
 
 ---
 
@@ -112,9 +112,9 @@ Each repository has one authoritative responsibility. Other repositories referen
 
 | Repository | Responsibility |
 |---|---|
-| `aop-governance` | Change control: decisions, change requests, findings, the lifecycle model, the release policy, the contributor rules, and the programme plan. |
-| `aop-foundations` | The concept: the founding paper, the six-level hierarchy, the glossary, the non-goals. |
-| `aop-landscape` | Positioning: the claim-by-claim differentiation table, the prior-art survey, the standards landscape. |
+| [`aop-governance`](https://github.com/agentic-operating-procedure/aop-governance) | Change control: decisions, change requests, findings, the lifecycle model, the release policy, the contributor rules, and the programme plan. |
+| [`aop-foundations`](https://github.com/agentic-operating-procedure/aop-foundations) | The concept: the founding paper, the six-level hierarchy, the glossary, the non-goals. |
+| [`aop-landscape`](https://github.com/agentic-operating-procedure/aop-landscape) | Positioning: the claim-by-claim differentiation table, the prior-art survey, the standards landscape. |
 
 ### Models, specifications and architecture
 
@@ -153,7 +153,7 @@ Changes to canonical definitions and technical contracts are reviewed in their a
 
 The objective is to maintain conceptual coherence while allowing the discipline to improve through research, implementation experience and independent scrutiny.
 
-Start with `aop-governance` to understand the change process.
+Start with [`aop-governance`](https://github.com/agentic-operating-procedure/aop-governance) to understand the change process.
 
 ## Contributing
 
@@ -172,8 +172,8 @@ Begin with the repository that owns the artefact you want to change. Use its con
 
 ## Foundational writing
 
-- `aop-foundations` founding paper: the origin of the concept, its structural difference from the Standard Operating Procedure, and the architecture of an AOP.
-- `aop-landscape` differentiation table: what the concept states that adjacent disciplines do not, claim by claim, with the reasoning marked where it is the programme's own argument.
+- [`aop-foundations` founding paper](https://github.com/agentic-operating-procedure/aop-foundations/blob/main/docs/aop-founding-paper-concept-scope.md): the origin of the concept, its structural difference from the Standard Operating Procedure, and the architecture of an AOP.
+- [`aop-landscape` differentiation table](https://github.com/agentic-operating-procedure/aop-landscape/blob/main/docs/aop-differentiation-landscape-scope.md): what the concept states that adjacent disciplines do not, claim by claim, with the reasoning marked where it is the programme's own argument.
 
 The essays establish the intellectual direction. The repositories progressively translate that direction into formal models, engineering contracts, implementations and evaluable practice.
 
