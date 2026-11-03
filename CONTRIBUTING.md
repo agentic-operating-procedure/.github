@@ -85,7 +85,11 @@ Linear history is required. The merge commit that records a reviewed decision is
 
 ## Branch protection
 
-`main` is protected in every repository in the estate. Direct pushes are rejected, except when seeding a newly created repository. A pull request with at least one approving review is required to merge. The branch is deleted on merge.
+`main` is protected in every repository in the estate. Direct pushes are rejected, except when seeding a newly created repository. Linear history is required, force pushes and branch deletion are refused, and the branch is deleted on merge.
+
+A pull request with at least one approving review is required to merge. The programme owner is the sole administrator of the organisation, and GitHub does not permit an author to approve their own pull request. The owner therefore merges as an administrator, which satisfies the review requirement by making the owner's own review of the change explicit and recorded in the pull request.
+
+This is a deliberate concession, not a default. It is acceptable while one person holds decision rights over the estate. The moment a second reviewer is available, the administrator override is withdrawn and the review requirement becomes genuinely independent.
 
 ## Labels
 

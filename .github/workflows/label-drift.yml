@@ -1,0 +1,56 @@
+name: Label drift
+
+on:
+  schedule:
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  metadata: read
+  issues: read
+
+jobs:
+  audit:
+    name: Audit the five-label authority gradient
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check the label scheme on every repository in the estate
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ORG: agentic-operating-procedure
+        run: |
+          set -euo pipefail
+
+          expected="research-proposal draft-spec release-candidate stable deprecated"
+
+          if ! repos=$(gh repo list "$ORG" --visibility public --limit 200 --json name --jq '.[].name'); then
+            echo "FAIL: could not enumerate the repositories in $ORG. The audit did not run." >&2
+            exit 1
+          fi
+
+          if [ -z "$repos" ]; then
+            echo "FAIL: the repository list for $ORG came back empty. The audit did not run." >&2
+            exit 1
+          fi
+
+          count=0
+          status=0
+          for repo in $repos; do
+            count=$((count + 1))
+            if ! present=$(gh api "repos/$ORG/$repo/labels" --paginate --jq '.[].name' 2>/dev/null | tr '\n' ' '); then
+              echo "FAIL: could not read the labels of $repo. The audit did not complete." >&2
+              status=1
+              continue
+            fi
+            for label in $expected; do
+              case " $present " in
+                *" $label "*) ;;
+                *) echo "MISSING $label in $repo"; status=1 ;;
+              esac
+            done
+          done
+
+          echo "Audited $count repositories against $expected"
+          exit $status

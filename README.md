@@ -30,18 +30,26 @@ Organisation-wide assets for `agentic-operating-procedure`. This repository hold
   README.md                        # this file
   CODE_OF_CONDUCT.md               # conduct policy
   CONTRIBUTING.md                  # contribution guide, with the review and merge doctrine
+  CODEOWNERS                       # ownership declaration
   SECURITY.md                      # vulnerability reporting policy
   LICENSE                          # MIT
-  ISSUE_TEMPLATE/                  # inherited by every repository in the estate
-    aop-specification.yml
-    aop-programme.yml
-    config.yml
   PULL_REQUEST_TEMPLATE.md         # inherited by every repository in the estate
+  .github/
+    ISSUE_TEMPLATE/                # inherited by every repository in the estate
+      aop-specification.yml
+      aop-programme.yml
+      aop-concept.yml
+      issue.yml                    # general fallback
+      config.yml
+    workflows/
+      label-drift.yml              # audits the five-label gradient across the estate
   profile/                         # the organisation profile
     README.md                      # rendered on the organisation page
     assets/
       aop-reference-architecture.png
 ```
+
+GitHub discovers organisation-wide community health files only under the `.github/` directory of this repository. A template or a workflow placed at the repository root is not inherited by the estate.
 
 ## Labels
 
