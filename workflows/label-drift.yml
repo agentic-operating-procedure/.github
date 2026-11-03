@@ -1,0 +1,34 @@
+name: Label drift
+
+on:
+  schedule:
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    name: Audit the five-label authority gradient
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check the label scheme on every repository in the estate
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          org="agentic-operating-procedure"
+          expected="research-proposal draft-spec release-candidate stable deprecated"
+          repos=$(gh repo list "$org" --limit 100 --json name --jq '.[].name')
+          status=0
+          for repo in $repos; do
+            present=$(gh api "repos/$org/$repo/labels" --paginate --jq '.[].name' | tr '\n' ' ')
+            for label in $expected; do
+              case " $present " in
+                *" $label "*) ;;
+                *) echo "MISSING $label in $repo"; status=1 ;;
+              esac
+            done
+          done
+          exit $status

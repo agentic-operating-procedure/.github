@@ -1,0 +1,71 @@
+name: Specification change
+description: Propose a change to a normative requirement, schema, or conformance clause.
+title: "[spec] "
+labels: ["draft-spec"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This template is for changes to a normative artefact. A change to a defined term,
+        a level of the hierarchy, or a non-goal is a foundational change and is filed in
+        `aop-governance` as a change request instead.
+  - type: input
+    id: artefact
+    attributes:
+      label: Artefact affected
+      description: The repository, the artefact path, and its current version.
+      placeholder: "aop-spec / specs / aop-model-v0.1.0.md"
+    validations:
+      required: true
+  - type: dropdown
+    id: change
+    attributes:
+      label: Change class
+      options:
+        - New requirement
+        - Changed requirement
+        - Removed requirement
+        - Schema change
+        - Conformance clause
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: Current state
+      description: What the artefact says today, quoted exactly.
+      placeholder: "Quote the clause or requirement as it currently reads."
+    validations:
+      required: true
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Proposed change
+      description: What it should say, and why.
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Downstream impact
+      description: Which other repositories, artefacts, implementations, or conformance tests are affected.
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: How will this be verified
+      description: What test, conformance clause, or evidence demonstrates the change is correct.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: The change is in the repository that owns the artefact.
+          required: true
+        - label: No en-dash, em-dash, or three-em character is used.
+          required: true
+        - label: The downstream impact has been checked against the cascade checklist.
+          required: true

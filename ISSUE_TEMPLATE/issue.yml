@@ -1,0 +1,31 @@
+name: General issue
+description: Raise anything that does not match a more specific template.
+title: ""
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template when no other template fits. If the issue changes a
+        defined term, a level of the hierarchy or a non-goal, use the
+        Foundational change template instead.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What is the issue, in one or two sentences?
+      placeholder: The six-level hierarchy does not state where a domain harness sits.
+    validations:
+      required: true
+  - type: textarea
+    id: detail
+    attributes:
+      label: Detail
+      description: What is the current state, and what should it be instead?
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact
+      description: Which repositories or artefacts would this change?

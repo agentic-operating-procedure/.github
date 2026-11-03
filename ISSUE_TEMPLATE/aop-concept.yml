@@ -1,0 +1,51 @@
+name: Foundational change
+description: Propose a change to a defined term, a level of the hierarchy, or a non-goal.
+title: "[concept] "
+labels: ["research-proposal"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Foundational changes are filed in `aop-governance` as change requests, because a change
+        to the meaning of a term or the shape of the hierarchy cascades across the estate.
+        Use this template to raise the issue that becomes a change request.
+  - type: input
+    id: term
+    attributes:
+      label: Term or level affected
+      description: The glossary identifier, for example AOP-001, or the level name.
+      placeholder: "AOP-001"
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: Current definition
+      description: The definition as it stands today.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Proposed definition
+      description: What it should say instead, and why the current one is inadequate.
+    validations:
+      required: true
+  - type: textarea
+    id: cascade
+    attributes:
+      label: Cascade assessment
+      description: Which repositories and artefacts would need to change, and what breaks in each.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: This is a change of meaning, not a correction of wording.
+          required: true
+        - label: The cascade has been assessed, not estimated.
+          required: true
+        - label: The change does not conflict with the six-level conceptual hierarchy.
+          required: true

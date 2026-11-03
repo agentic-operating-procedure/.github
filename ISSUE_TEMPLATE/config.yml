@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Foundational change (a term, a level, a non-goal)
+    url: https://github.com/agentic-operating-procedure/aop-governance/issues/new?labels=research-proposal
+    about: Foundational changes are filed in aop-governance as change requests.
+  - name: Security vulnerability
+    url: https://github.com/agentic-operating-procedure/.github/security/advisories/new
+    about: Report privately. Do not open a public issue.
