@@ -5,7 +5,7 @@ The concept of an agent here is compatible with Russell and Norvig (1995) defini
 
 AOP establishes the intent, decision rights, execution constraints and assurance obligations under which an agent may work, and the evidence that shows the work was done correctly.
 
-Its purpose is not to automate a documented procedure for agents through agent skill adaptation. It is to make delegated operational execution inspectable: to state, before execution, who may decide what, under which constraints, and with what proof of outcome.
+The purpose is not to automate a documented procedure, like the classic standard operating procedure (SOP) for agents through agent skill adaptation. It is to make delegated operational execution inspectable: to state, before execution, who may decide what, under which constraints, and with what proof of outcome.
 
 [Read the founding paper](https://github.com/agentic-operating-procedure/aop-foundations/blob/main/docs/aop-founding-paper-concept-scope.md) | [Explore the GitHub organisation](https://github.com/agentic-operating-procedure)
 
