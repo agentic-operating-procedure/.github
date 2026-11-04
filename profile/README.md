@@ -1,6 +1,6 @@
 # Agentic Operating Procedure
 
-Agentic Operating Procedure is an engineering discipline for specifying, governing and assuring operational execution by agents that interpret context and act.
+Agentic Operating Procedure is an engineering and operational blueprint for specifying, governing and assuring operational execution by agents that interpret context and act.
 
 AOP establishes the intent, decision rights, execution constraints and assurance obligations under which an agent may work, and the evidence that shows the work was done correctly.
 
