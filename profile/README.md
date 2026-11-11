@@ -11,6 +11,35 @@ The purpose is not to automate a documented procedure, like the classic standard
 
 ---
 
+## Business case
+
+The business case for Agentic Operating Procedure is not that organisations need another agent framework. It is that most organisations want to delegate operational work to agents but cannot yet do so with acceptable risk, auditability or fidelity to how the work actually happens.
+
+Existing SOPs, runbooks, RPA and workflow engines assume either that a human notices what the document missed, or that the authored path is complete. Agent orchestration frameworks make tool-using agents easy to build, but they do not state per-decision authority boundaries, enforce them outside the model context, or require a specified evidence record that proves the outcome was correct.
+
+The result is a familiar set of failures: agents that work on the happy path and invent on the real variants; “autonomous” claims that collapse under audit or incident review; inability to show regulators or internal risk functions what the agent was allowed to decide and why; and human experts remaining stuck on routine corridor work instead of exceptions.
+
+AOP treats these as specification and assurance problems rather than model problems. It supplies the missing governance layer that makes bounded, evidence-based agentic execution defensible.
+
+| Value driver | How AOP creates it | Typical metrics |
+|---|---|---|
+| **Risk reduction** | Explicit authority per decision, enforced outside the model context; fail-closed on unknowns; short-lived scoped credentials; complete case records | Authority violations = 0 by construction; reduction in incident severity or regulatory exposure |
+| **Auditability and regulatory defensibility** | Provenance from observed cases to compiled rules; append-only, replayable case records; evidence bundles for every escalation; human accountability retained | Time to answer auditor questions; successful demonstration of replay; inclusion in safety cases or licence conditions |
+| **Operational leverage** | Agents handle bounded, high-volume variants; humans move from corridor execution to exception ownership | Volume handled per operator; MTTR or first-pass resolution versus human baseline; reduction in toil |
+| **Fidelity to reality** | Procedures compiled from observation rather than pure intent; variants carry observed frequencies; drift detection triggers recalibration | Coverage of real paths; reduction in undocumented workarounds; shadow-mode agreement with human decisions |
+| **Brownfield reuse** | Existing SOPs, RPA and workflow engines stay; AOP becomes the decision layer above them | Avoided rewrite cost; ability to govern legacy and UI-driven paths that APIs never saw |
+| **Controlled progression** | Clear maturity stages (human-operated → assisted → agentic → autonomous) with evidence gates | Honest stage statements; ability to expand scope only after measured parity or improvement |
+
+The economic logic is straightforward. The cost of standing up a declared observation surface, compiling and versioning AOPs, implementing a conforming harness, and changing roles is real. The return comes from avoiding the larger cost of an unbounded agent error, scaling operational volume without linear growth in expert headcount, turning currently tribal or undocumented knowledge into a governed asset, and enabling agentic execution in domains that would otherwise remain closed for risk reasons.
+
+Stage 3 (“agentic”) is the intended operating point for most organisations: agents execute bounded actions; humans retain exception ownership and accountability. Full autonomy is an earned stage with additional evidence obligations, not a marketing claim.
+
+AOP is strongest where the cost of getting agentic execution wrong is high and the volume of operational work is large enough to repay the governance investment. Its differentiation is that it makes the delegation measurable, enforceable and auditable rather than merely plausible.
+
+See [`aop-adoption`](https://github.com/agentic-operating-procedure/aop-adoption) for the maturity model, adoption scenarios and organisational change guidance.
+
+---
+
 ## The discipline
 
 Operational work has always been described in documents. A Standard Operating Procedure states an approved method: a linear corridor with prescribed steps, a named owner, and an assumed human reader who notices what the document missed. That model works until the work stops being linear, until exceptions are common rather than exceptional, and until the executor is a machine that cannot notice anything at all.
