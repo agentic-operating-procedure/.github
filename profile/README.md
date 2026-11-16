@@ -63,7 +63,7 @@ These concerns apply across the full operating surface: from a single regulated 
 
 The reference architecture is a versioned artefact describing how AOP is implemented as an end-to-end engineering system, from observed work to a verified, evidenced outcome and back to a revised specification.
 
-![Reference architecture: from observed work to a verified outcome](./assets/aop-reference-architecture.png)
+![Reference architecture: from observed work to a verified outcome](./assets/aop-reference-architecture-D.png)
 
 ### The engineering lifecycle
 
